@@ -15,7 +15,9 @@
 
     <div class="wrapper">
       <div class="container bg-white shadow" id="add-todo">
-        <h2 class="container-header text-center">Tambah yang harus dilakukan</h2>
+        <h2 class="container-header text-center">
+          Tambah yang harus dilakukan
+        </h2>
         <form class="form" action="#" id="form">
           <div class="form-group form-title">
             <label for="title">Masukkan hal yang akan dilakukan</label>
@@ -25,8 +27,19 @@
             <label for="date">Masukkan tanggal harus selesai</label>
             <input type="date" id="date" name="date" required />
           </div>
-          <input type="submit" value="Submit" name="Submit" class="btn-submit" />
+          <input
+            type="submit"
+            value="Submit"
+            name="Submit"
+            class="btn-submit"
+          />
         </form>
+      </div>
+
+      <div class="container">
+        <h2 class="container-header">Yang harus dilakukan</h2>
+
+        <div class="list-item" id="todos"></div>
       </div>
     </div>
     <script src="js/script.js"></script>
