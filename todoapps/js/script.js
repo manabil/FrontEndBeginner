@@ -192,6 +192,10 @@ function saveData() {
   }
 }
 
+document.addEventListener(SAVED_EVENT, function () {
+  console.log(localStorage.getItem(STORAGE_KEY));
+});
+
 function isStorageExist() /* boolean */ {
   if (typeof Storage === undefined) {
     alert("Browser kamu tidak mendukung local storage");
