@@ -1,0 +1,391 @@
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap");
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: "PT Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+@media (max-width: 784px) {
+  nav {
+    padding: 10px 0;
+  }
+  nav label.checkBtn {
+    display: block;
+    padding-right: 0;
+    margin-right: 0;
+  }
+  nav ul {
+    padding-right: 0;
+    margin-top: 0.6em;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #263179;
+    text-align: center;
+  }
+  nav label.checkBtn {
+    margin: 0.5em 1.5em;
+  }
+  label.logo {
+    margin: 0.5em 0.75em;
+  }
+  nav ul li {
+    display: block;
+    margin: 0.5em 0em;
+    line-height: 3em;
+  }
+  nav ul li a {
+    font-size: 1.2em;
+  }
+  a:hover,
+  a:active {
+    background: none;
+    color: #4154f1;
+    transition: ease-in-out 0.3s;
+  }
+  #check:checked ~ ul {
+    left: 100%;
+  }
+  main #content {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  .container-flex {
+    display: flex;
+  }
+  .center-item {
+    justify-content: center;
+    align-items: center;
+  }
+  .col-50 {
+    flex-basis: 100%;
+    transition: ease-in 0.5s;
+  }
+  .col-kiri {
+    /* padding: 1em; */
+  }
+  .col-kanan {
+    /* padding: 1em; */
+  }
+  .col-50 h1 {
+    font-size: 1em;
+    font-weight: bold;
+    color: #263179;
+    margin-bottom: 0.5em;
+  }
+  .col-50 h3 {
+    font-size: 1.5em;
+    font-weight: 100;
+    color: #444444;
+    margin-bottom: 0.5em;
+  }
+  .col-50 button {
+    background: #4154f1;
+    padding: 0.6em 1.6em;
+    border-radius: 8px;
+    color: white;
+    font-size: 1.2em;
+    margin-top: 0.5em;
+  }
+  .col-50 button:hover {
+    background: #717de9;
+    cursor: pointer;
+  }
+  .row {
+    flex-direction: column;
+  }
+  .container-flex .heading-content {
+    font-size: 2em;
+    color: #263179;
+    text-align: center;
+    line-height: 0.5em;
+  }
+  .container-flex .heading-content section {
+    font-size: 0.7em;
+    color: #4154f1;
+  }
+  .container-flex .card {
+    background: #fff;
+    padding: 2em;
+    border-radius: 8px;
+    max-width: 19em;
+    max-height: 45em;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  }
+  .container-flex .kanan {
+    margin: 0em 2em 2em 7em;
+  }
+  .container-flex .kiri {
+    margin: 0em 7em 2em 2em;
+  }
+  .container-flex .tengah {
+    margin: 0em 0em 2em 0em;
+  }
+  .container-flex .card img {
+    align-items: center;
+    width: 15em;
+    height: 15em;
+  }
+  .container-flex .card:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+  }
+  .container-flex .card h4 {
+    text-align: center;
+    color: #4154f1;
+    font-size: 1.5em;
+  }
+  .container-flex .card p {
+    text-align: center;
+    color: #444444;
+    font-size: 1em;
+    word-wrap: break-word;
+  }
+  .flex-grow {
+    flex-grow: 1;
+    transition: ease-in 0.5s;
+  }
+  .background-theme-grad {
+    height: 100vh;
+    background: linear-gradient(to bottom, #fff, #dcdeff);
+  }
+  #container-profile {
+    margin-bottom: 5em;
+  }
+  .container-flex .card img.profile {
+    object-fit: cover;
+    border-radius: 10em;
+  }
+  #container-profile {
+    flex-direction: row;
+    height: auto;
+  }
+  #sosmed {
+    height: auto;
+  }
+  .container-flex a img.sosmed {
+    width: 2em;
+    height: 2em;
+    margin: 0.5em;
+  }
+  footer {
+    background: #263179;
+    padding: 0.01em 0em;
+    color: #fff;
+    text-align: center;
+    font-size: 0.7em;
+  }
+  a.asosmed:hover {
+    background-color: #717de9;
+    border-radius: 15px;
+  }
+}
+header {
+  display: inline;
+}
+nav {
+  background-color: #263179;
+  padding: 10px 2.5em;
+}
+label.logo {
+  color: white;
+  font-size: 2em;
+  line-height: 1.25em;
+  font-weight: bold;
+}
+nav label .image-logo {
+  width: 0.8em;
+  height: 0.8em;
+  margin-right: 0.3em;
+}
+nav label.checkBtn {
+  margin: 0.5em 1.5em;
+  float: right;
+  cursor: pointer;
+  display: none;
+}
+#check {
+  display: none;
+}
+nav label .menuBtn {
+  width: 1.75em;
+  height: 1.75em;
+}
+nav ul {
+  float: right;
+  padding: 0;
+  margin: 0;
+}
+nav ul li {
+  display: inline-block;
+  margin: 0.5em 0em;
+}
+nav ul li a {
+  font-size: 1em;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 3px;
+  padding: 0.5em 1.5em;
+}
+a:active,
+a:hover {
+  background: #4154f1;
+  transition: ease-in-out 0.3s;
+}
+.yukButton {
+  background: #4154f1;
+  padding: 0.6em 1.6em;
+}
+.yukButton:hover {
+  background: #717de9;
+  padding: 0.6em 1.6em;
+}
+main #content {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.container-flex {
+  display: flex;
+  height: 100vh;
+}
+.center-item {
+  justify-content: center;
+  align-items: center;
+}
+.background-theme {
+  height: 100vh;
+  background: url("image/vespaku/hero-bg.png") no-repeat center center;
+  background-size: cover;
+}
+.background-theme-reverse {
+  height: 100vh;
+  background: url("image/vespaku/hero-bg-rev.png") no-repeat center center;
+  background-size: cover;
+}
+.col-50 {
+  flex-basis: 50%;
+  transition: ease-in 0.5s;
+}
+.col-kiri {
+  padding: 5em 0em 0em 7em;
+}
+.col-kanan {
+  padding: 7em 7em 0em 7em;
+}
+.col-50 h1 {
+  font-size: 2.75em;
+  font-weight: bold;
+  color: #263179;
+  margin-bottom: 0.5em;
+}
+.col-50 h3 {
+  font-size: 1.5em;
+  font-weight: 100;
+  color: #444444;
+  margin-bottom: 0.5em;
+}
+.col-50 button {
+  background: #4154f1;
+  padding: 0.6em 1.6em;
+  border-radius: 8px;
+  color: white;
+  font-size: 1.2em;
+  margin-top: 0.5em;
+}
+.col-50 button:hover {
+  background: #717de9;
+  cursor: pointer;
+}
+.row {
+  flex-direction: column;
+}
+.container-flex .heading-content {
+  font-size: 2em;
+  color: #263179;
+  text-align: center;
+  line-height: 0.5em;
+}
+.container-flex .heading-content section {
+  font-size: 0.7em;
+  color: #4154f1;
+}
+.container-flex .card {
+  background: #fff;
+  padding: 2em;
+  border-radius: 8px;
+  max-width: 19em;
+  max-height: 45em;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+.container-flex .kanan {
+  margin: 0em 2em 2em 7em;
+}
+.container-flex .kiri {
+  margin: 0em 7em 2em 2em;
+}
+.container-flex .tengah {
+  margin: 0em 0em 2em 0em;
+}
+.container-flex .card img {
+  align-items: center;
+  width: 15em;
+  height: 15em;
+}
+.container-flex .card:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+.container-flex .card h4 {
+  text-align: center;
+  color: #4154f1;
+  font-size: 1.5em;
+}
+.container-flex .card p {
+  text-align: center;
+  color: #444444;
+  font-size: 1em;
+  word-wrap: break-word;
+}
+.flex-grow {
+  flex-grow: 1;
+  transition: ease-in 0.5s;
+}
+.background-theme-grad {
+  height: 100vh;
+  background: linear-gradient(to bottom, #fff, #dcdeff);
+}
+#container-profile {
+  margin-bottom: 5em;
+}
+.container-flex .card img.profile {
+  object-fit: cover;
+  border-radius: 10em;
+}
+#container-profile {
+  flex-direction: row;
+  height: auto;
+}
+#sosmed {
+  height: auto;
+}
+.container-flex a img.sosmed {
+  width: 2em;
+  height: 2em;
+  margin: 0.5em;
+}
+footer {
+  background: #263179;
+  padding: 0.01em 0em;
+  color: #fff;
+  text-align: center;
+  font-size: 0.7em;
+}
+a.asosmed:hover {
+  background-color: #717de9;
+  border-radius: 15px;
+}
