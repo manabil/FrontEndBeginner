@@ -10,14 +10,13 @@
     <header>
       <nav>
         <div class="logo">
-          <img src="assets/images/icon.webp" alt="" />
-          <h2>Bookshelf</h2>
+          <a href="index.html">⬅ </a>
+          <h2>Katalog Buku</h2>
         </div>
         <ul class="hamburger">
           <li><a href="index.html#home">Home</a></li>
-          <li><a href="index.html#feature">Features</a></li>
           <li><a href="katalog.html">Katalog</a></li>
-          <li><a href="index.html#contact">Contact</a></li>
+          <li><a href="tambah.html">+ Catat Buku</a></li>
         </ul>
         <div class="menu" onclick="toggler()">
           <span></span>
@@ -27,16 +26,28 @@
       </nav>
     </header>
     <main>
-      <div class="flex-row" id="home">
-        <div class="flex-content" id="content-home">
-          <article>
-            <!-- <h1>Udah nyerah cari bug programmu tapi tetep nggak nemu ?</h1> -->
-            <h1>Sering baca buku dan lupa buku apa aja yang udah dibaca ?</h1>
-            <h3>Yuk catat dan simpan buku anda disini !</h3>
-            <a href="" class="btn">Lihat Katalog !</a>
-          </article>
-          <article>
-            <img src="assets/images/hero-img.png" alt="image-main" id="image-main" />
+      <div class="flex-row" id="row-katalog">
+        <div class="flex-content" id="content-katalog">
+          <article class="katalog-form">
+            <img
+              src="https://lh5.googleusercontent.com/BvWI2lIEDMAXv8dGOW-Wr5ymr3M0x7uCE0brt51xjyDQMNpG222dYB2x1X9UdQW7afbSyGJP5tUmb3eS5zKCqF3Jmv0eU1t7G8sa1y2mtdkI--MJBMHSeaD6mVm-ngwwCQ=w1280"
+              alt=""
+            />
+            <form action="#" id="form">
+              <div class="form-card">
+                <p>Judul</p>
+                <input id="inputJudul" type="text" placeholder="Masukkan Judul Buku" autofocus required />
+              </div>
+              <div class="form-card">
+                <p>Penulis</p>
+                <input id="inputPenulis" type="text" placeholder="Masukkan Penulis Buku" required />
+              </div>
+              <div class="form-card">
+                <p>Tahun</p>
+                <input id="inputTahun" type="number" placeholder="Masukkan Tahun Buku Terbit" required />
+              </div>
+              <input type="submit" name="saveButton" value="Simpan Buku" />
+            </form>
           </article>
         </div>
       </div>
@@ -45,5 +56,6 @@
       <p>Belajar Dasar Pemrograman Web &#169; 2019, Dicoding Academy</p>
     </footer>
     <script src="assets/javascripts/interact.js"></script>
+    <script src="assets/javascripts/book.js"></script>
   </body>
 </html>
