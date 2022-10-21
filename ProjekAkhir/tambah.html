@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Catat Buku | Katalog Buku Anda</title>
+    <link rel="stylesheet" href="assets/styles/style.css" />
+    <link rel="icon" href="assets/images/icon.webp" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo">
+          <a href="index.html">⬅ </a>
+          <h2>Catat Buku Baru</h2>
+        </div>
+        <ul class="hamburger">
+          <li><a href="index.html#home">Home</a></li>
+          <li><a href="katalog.html">Katalog</a></li>
+          <li><a href="tambah.html">+ Catat Buku</a></li>
+        </ul>
+        <div class="menu" onclick="toggler()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <div class="flex-row" id="row-katalog">
+        <div class="flex-content" id="content-katalog">
+          <article class="katalog-form">
+            <img
+              src="https://lh5.googleusercontent.com/BvWI2lIEDMAXv8dGOW-Wr5ymr3M0x7uCE0brt51xjyDQMNpG222dYB2x1X9UdQW7afbSyGJP5tUmb3eS5zKCqF3Jmv0eU1t7G8sa1y2mtdkI--MJBMHSeaD6mVm-ngwwCQ=w1280"
+              alt=""
+            />
+            <form action="#" id="form">
+              <div class="form-card">
+                <p>Judul</p>
+                <input id="inputJudul" type="text" placeholder="Masukkan Judul Buku" autofocus required />
+              </div>
+              <div class="form-card">
+                <p>Penulis</p>
+                <input id="inputPenulis" type="text" placeholder="Masukkan Penulis Buku" required />
+              </div>
+              <div class="form-card">
+                <p>Tahun</p>
+                <input id="inputTahun" type="number" placeholder="Masukkan Tahun Buku Terbit" required />
+              </div>
+              <input type="submit" name="saveButton" value="Simpan Buku" />
+            </form>
+          </article>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <p>Belajar Dasar Pemrograman Web &#169; 2019, Dicoding Academy</p>
+    </footer>
+    <script src="assets/javascripts/interact.js"></script>
+    <script src="assets/javascripts/book.js"></script>
+  </body>
+</html>
