@@ -18,10 +18,12 @@ nav {
   left: 0;
   right: 0;
   background-color: #263179;
-  padding: 1em;
+  padding: 0.7em;
   align-items: center;
   justify-content: space-between;
   letter-spacing: 1px;
+  z-index: 1;
+  transition: 0.25s;
 }
 
 .logo {
@@ -30,6 +32,7 @@ nav {
   margin-left: 10px;
   align-items: center;
   transition: 0.25s;
+  margin-left: 30px;
 }
 
 .logo img {
@@ -50,7 +53,8 @@ nav ul {
   justify-content: space-evenly;
   list-style: none;
   align-items: center;
-  width: 25%;
+  width: 35%;
+  margin-right: 30px;
 }
 
 li a {
@@ -85,7 +89,7 @@ li a:hover {
 }
 
 .flex-row#contact {
-  max-height: 100vh;
+  height: 100vh;
   background-image: linear-gradient(white, #f2f5fc);
   border: 1px solid rgba(0, 0, 0, 0);
 }
@@ -104,6 +108,7 @@ li a:hover {
 
 .flex-content#content-home {
   margin: 150px 10%;
+  padding-top: 0;
 }
 
 .pad0 {
@@ -288,11 +293,16 @@ footer {
     transform: translateX(100%);
     transition: 0.5s;
     opacity: 0;
+    margin-right: 0;
   }
 
   nav ul.slided {
     transform: translateX(0);
     opacity: 1;
+  }
+
+  .logo {
+    margin-left: 0;
   }
 
   .menu {
@@ -333,6 +343,10 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+
+  .flex-content#content-home {
+    padding-top: 50px;
   }
 
   article img#image-main {
