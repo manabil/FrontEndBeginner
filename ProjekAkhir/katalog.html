@@ -10,13 +10,14 @@
     <header>
       <nav>
         <div class="logo">
-          <a href="index.html">⬅ </a>
+          <img src="assets/images/icon.webp" alt="" />
           <h2>Katalog Buku</h2>
         </div>
         <ul class="hamburger">
-          <li><a href="index.html#home">Home</a></li>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#feature">Features</a></li>
           <li><a href="katalog.html">Katalog</a></li>
-          <li><a href="tambah.html">+ Catat Buku</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
         <div class="menu" onclick="toggler()">
           <span></span>
@@ -27,27 +28,44 @@
     </header>
     <main>
       <div class="flex-row" id="row-katalog">
-        <div class="flex-content" id="content-katalog">
-          <article class="katalog-form">
-            <img
-              src="https://lh5.googleusercontent.com/BvWI2lIEDMAXv8dGOW-Wr5ymr3M0x7uCE0brt51xjyDQMNpG222dYB2x1X9UdQW7afbSyGJP5tUmb3eS5zKCqF3Jmv0eU1t7G8sa1y2mtdkI--MJBMHSeaD6mVm-ngwwCQ=w1280"
-              alt=""
-            />
-            <form action="#" id="form">
-              <div class="form-card">
-                <p>Judul</p>
-                <input id="inputJudul" type="text" placeholder="Masukkan Judul Buku" autofocus required />
+        <div class="flex-content col-dir" id="content-katalog">
+          <article>
+            <div class="katalog-card col-dir">
+              <div class="katalog-header">
+                <a href="tambah.html">⬅ </a>
+                <h2>Daftar Katalog Buku</h2>
               </div>
-              <div class="form-card">
-                <p>Penulis</p>
-                <input id="inputPenulis" type="text" placeholder="Masukkan Penulis Buku" required />
+              <div class="search-form">
+                <form>
+                  <input type="text" placeholder="Cari Judul Buku" autofocus required complete />
+                  <input type="submit" value="Cari" />
+                </form>
               </div>
-              <div class="form-card">
-                <p>Tahun</p>
-                <input id="inputTahun" type="number" placeholder="Masukkan Tahun Buku Terbit" required />
+              <div class="book-item">
+                <div class="book-complete">
+                  <div class="book-info">
+                    <h2>Harry Potter <span>Complete</span></h2>
+                    <p>2020</p>
+                    <p>Cut nyak dien</p>
+                  </div>
+                  <div class="book-action">
+                    <a href="#">Belum selesai dibaca</a>
+                    <a href="#">Hapus Buku</a>
+                  </div>
+                </div>
+                <div class="book-uncomplete">
+                  <div class="book-info">
+                    <h2>Harry Potter</h2>
+                    <p>2020</p>
+                    <p>Cut nyak dien</p>
+                  </div>
+                  <div class="book-action">
+                    <a href="#">Selesai dibaca</a>
+                    <a href="#">Hapus Buku</a>
+                  </div>
+                </div>
               </div>
-              <input type="submit" name="saveButton" value="Simpan Buku" />
-            </form>
+            </div>
           </article>
         </div>
       </div>

@@ -95,8 +95,12 @@ li a:hover {
   background-image: linear-gradient(white, #f2f5fc);
 }
 
-.flex-row#row-katalog {
+.flex-row#row-tambah {
   max-height: 2000px;
+}
+
+.flex-row#row-katalog {
+  min-height: 100vh;
 }
 
 .flex-content {
@@ -105,6 +109,7 @@ li a:hover {
   margin: 75px 10%;
   padding: 50px 0;
   border: 1px solid green;
+  padding-top: 0;
 }
 
 .flex-content article {
@@ -113,15 +118,17 @@ li a:hover {
 
 .flex-content#content-home {
   margin: 150px 10%;
-  padding-top: 0;
+}
+
+.flex-content#content-tambah {
+  border: 1px solid orange;
+  margin: 150px 7%;
+  max-width: 90vw;
 }
 
 .flex-content#content-katalog {
-  border: 1px solid orange;
-  margin: 150px 7%;
-  padding-top: 0;
   max-width: 90vw;
-  flex-direction: column;
+  margin: 150px 7%;
 }
 
 .pad0 {
@@ -172,6 +179,18 @@ h3 {
   padding: 0 25px;
   color: #263179;
   margin: 0;
+}
+
+.katalog-header {
+  display: flex;
+  align-items: center;
+}
+
+.katalog-header a {
+  text-decoration: none;
+  color: black;
+  font-size: 1.5em;
+  margin-right: 0.5em;
 }
 
 .btn {
@@ -230,6 +249,13 @@ h3 {
   padding: 10px;
   font-size: 1em;
   border-radius: 5px;
+}
+
+.katalog-card {
+  display: flex;
+  border-radius: 10px;
+  padding: 2em;
+  width: 1156px;
 }
 
 .profile-card {
