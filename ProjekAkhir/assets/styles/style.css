@@ -184,13 +184,7 @@ h3 {
 .katalog-header {
   display: flex;
   align-items: center;
-}
-
-.katalog-header a {
-  text-decoration: none;
-  color: black;
-  font-size: 1.5em;
-  margin-right: 0.5em;
+  font-size: 1.25em;
 }
 
 .btn {
@@ -251,11 +245,55 @@ h3 {
   border-radius: 5px;
 }
 
+.search-form form {
+  display: flex;
+  justify-content: space-between;
+  max-width: 550px;
+}
+
+.search-form input:first-child {
+  width: 200px;
+  flex-basis: 70%;
+  padding: 0.5em;
+  border-color: rgb(33, 43, 129, 0.4);
+  border-radius: 5px;
+  margin-right: 1em;
+}
+
+.search-form input:last-child {
+  padding: 5px;
+  /* width: 10%; */
+  cursor: pointer;
+  flex-basis: 30%;
+  letter-spacing: 1px;
+  background-color: #4154f1;
+  color: white;
+  border-radius: 5px;
+  border: none;
+}
+
 .katalog-card {
   display: flex;
   border-radius: 10px;
   padding: 2em;
   width: 1156px;
+  max-width: 90vw;
+}
+
+.katalog-card > a {
+  text-decoration: none;
+  background: #4154f1;
+  padding: 0.6em;
+  border-radius: 6px;
+  color: white;
+  font-size: 1.1em;
+  max-width: fit-content;
+  margin: 15px 0;
+  transition: 0.2s;
+}
+
+.katalog-card > a:hover {
+  background-color: #263179;
 }
 
 .profile-card {
@@ -353,6 +391,26 @@ h3 {
   text-align: center;
   font-weight: 700;
   color: #263179;
+}
+
+.book-card {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+  width: 100%;
+  justify-content: space-between;
+  padding: 15px;
+  background-color: white;
+  border-radius: 5px;
+  transition: 0.25s;
+}
+
+.book-card:hover {
+  box-shadow: 5px 5px 10px grey;
+}
+
+.book-info h2 {
+  color: #212b81;
 }
 
 footer {
