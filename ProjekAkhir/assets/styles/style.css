@@ -703,7 +703,6 @@ footer {
   footer {
     position: relative;
     bottom: 0;
-    margin: 3em 0 0 0;
     width: 100%;
     background: #263179;
     padding: 10px 0em;
@@ -769,5 +768,9 @@ footer {
     margin: 0 20px 0 0;
     margin: 0;
     border-radius: 0.1px;
+  }
+
+  footer {
+    margin: 3em 0 0 0;
   }
 }
