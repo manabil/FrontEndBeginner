@@ -5,6 +5,8 @@
     <title>Katalog Buku | Katalog Buku Anda</title>
     <link rel="stylesheet" href="assets/styles/style.css" />
     <link rel="icon" href="assets/images/icon.webp" />
+
+    <script src="https://kit.fontawesome.com/9bf0f05b94.js" crossorigin="anonymous"></script>
   </head>
   <body>
     <header>
@@ -14,8 +16,8 @@
           <h2>Katalog Buku</h2>
         </div>
         <ul class="hamburger">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#feature">Features</a></li>
+          <li><a href="index.html#home">Home</a></li>
+          <li><a href="index.html#feature">Features</a></li>
           <li><a href="katalog.html">Katalog</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
@@ -38,19 +40,22 @@
               <div class="search-form">
                 <form>
                   <input type="text" placeholder="Cari Judul Buku" autofocus required />
-                  <input type="submit" value="Cari" />
+                  <button type="submit"><i class="fa fa-light fa-magnifying-glass"></i></button>
                 </form>
               </div>
               <div class="book-item">
                 <div class="book-card book-complete">
                   <div class="book-info">
-                    <h2>Harry Potter <span>Complete</span></h2>
+                    <h2>
+                      Harry Potter <span style="color: green"><i class="fa fa-light fa-circle-check"></i></span>
+                    </h2>
                     <p>2020</p>
                     <p>Cut nyak dien</p>
                   </div>
                   <div class="book-action">
-                    <a href="#">Belum selesai dibaca</a>
-                    <a href="#">Hapus Buku</a>
+                    <button title="Complete Read"><i class="fa fa-light fa-book fa-2xl"></i></button>
+                    <button title="Edit Book"><i class="fa fa-regular fa-pen-to-square fa-2xl"></i></button>
+                    <button title="Delete Book"><i class="fa fa-regular fa-trash fa-2xl"></i></button>
                   </div>
                 </div>
                 <div class="book-card book-uncomplete">
@@ -60,8 +65,9 @@
                     <p>Cut nyak dien</p>
                   </div>
                   <div class="book-action">
-                    <a href="#">Selesai dibaca</a>
-                    <a href="#">Hapus Buku</a>
+                    <button title="Complete Read"><i class="fa fa-thin fa-book-open fa-2xl"></i></button>
+                    <button title="Edit Book"><i class="fa fa-regular fa-pen-to-square fa-2xl"></i></button>
+                    <button title="Delete Book"><i class="fa fa-regular fa-trash fa-2xl"></i></button>
                   </div>
                 </div>
               </div>

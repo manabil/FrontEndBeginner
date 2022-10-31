@@ -81,8 +81,9 @@ li a:hover {
 }
 
 .flex-row {
-  max-height: 100vh;
-  border: 1px solid red;
+  min-height: 100vh;
+  max-height: fit-content;
+  padding: 5px;
   background-image: linear-gradient(#f2f5fc, white);
 }
 
@@ -108,25 +109,15 @@ li a:hover {
   align-items: center;
   margin: 75px 10%;
   padding: 50px 0;
-  border: 1px solid green;
   padding-top: 0;
-}
-
-.flex-content article {
-  border: 1px solid blue;
 }
 
 .flex-content#content-home {
   margin: 150px 10%;
 }
 
+.flex-content#content-katalog,
 .flex-content#content-tambah {
-  border: 1px solid orange;
-  margin: 150px 7%;
-  max-width: 90vw;
-}
-
-.flex-content#content-katalog {
   max-width: 90vw;
   margin: 150px 7%;
 }
@@ -146,7 +137,6 @@ li a:hover {
 }
 
 .flex-header {
-  border: 1px solid black;
   margin-bottom: 2em;
 }
 
@@ -251,25 +241,27 @@ h3 {
   max-width: 550px;
 }
 
-.search-form input:first-child {
+.search-form input {
   width: 200px;
-  flex-basis: 70%;
+  flex-basis: 90%;
   padding: 0.5em;
   border-color: rgb(33, 43, 129, 0.4);
   border-radius: 5px;
   margin-right: 1em;
 }
 
-.search-form input:last-child {
+.search-form button {
   padding: 5px;
-  /* width: 10%; */
   cursor: pointer;
-  flex-basis: 30%;
-  letter-spacing: 1px;
+  flex-basis: 10%;
   background-color: #4154f1;
   color: white;
   border-radius: 5px;
   border: none;
+}
+
+.search-form button:hover {
+  background-color: #263179;
 }
 
 .katalog-card {
@@ -282,7 +274,7 @@ h3 {
 
 .katalog-card > a {
   text-decoration: none;
-  background: #4154f1;
+  background: #098a3a;
   padding: 0.6em;
   border-radius: 6px;
   color: white;
@@ -293,14 +285,13 @@ h3 {
 }
 
 .katalog-card > a:hover {
-  background-color: #263179;
+  background-color: #136633;
 }
 
 .profile-card {
   display: flex;
   flex-direction: row;
   background-color: white;
-  border: 1px solid black;
   border-radius: 10px;
   flex-basis: 33.3%;
   margin: 0 2.5em;
@@ -321,7 +312,6 @@ h3 {
   flex-direction: column;
   align-items: center;
   background-color: white;
-  border: 1px solid black;
   border-radius: 10px;
   flex-basis: 33.3%;
   margin: 0 2.5em;
@@ -337,7 +327,6 @@ h3 {
 
 .card img {
   width: 15em;
-  border: 1px solid black;
   margin: 20px 10px;
 }
 
@@ -407,10 +396,55 @@ h3 {
 
 .book-card:hover {
   box-shadow: 5px 5px 10px grey;
+  background-color: rgba(65, 84, 241, 0.1);
 }
 
 .book-info h2 {
   color: #212b81;
+}
+
+.book-action {
+  display: flex;
+  width: 150px;
+  justify-content: space-around;
+  margin-right: 15px;
+}
+
+.book-action button {
+  background-color: rgba(255, 255, 255, 0);
+  padding: 1em;
+  border: none;
+  border-radius: 5px;
+}
+
+.book-action button:first-child {
+  color: #4154f1;
+}
+
+.book-action button:first-child:hover {
+  background-color: #4154f1;
+  color: white;
+  cursor: pointer;
+}
+
+.book-action button:nth-child(2) {
+  color: orange;
+}
+
+.book-action button:nth-child(2):hover {
+  background-color: orange;
+  color: black;
+  cursor: pointer;
+}
+
+.book-action button:last-child {
+  color: red;
+}
+
+.book-action button:last-child:hover {
+  background-color: red;
+  color: white;
+  cursor: pointer;
 }
 
 footer {
@@ -468,7 +502,6 @@ footer {
   .flex-row#feature {
     max-height: 300vh;
     background-image: linear-gradient(#f2f5fc, white);
-    border: 1px solid black;
   }
 
   .flex-content {
@@ -476,11 +509,9 @@ footer {
     flex-direction: column;
     margin: 75px 10%;
     padding: 50px 0;
-    border: 1px solid black;
   }
 
   .flex-content article {
-    border: 1px solid black;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -498,12 +529,7 @@ footer {
     padding: 0;
   }
 
-  .col-dir {
-    flex-direction: column;
-  }
-
   .flex-header {
-    border: 1px solid black;
     margin-bottom: 2em;
   }
 
@@ -565,7 +591,6 @@ footer {
     flex-direction: column;
     align-items: center;
     background-color: white;
-    border: 1px solid black;
     border-radius: 10px;
     flex-basis: 0;
     margin: 0 0 2em;
@@ -574,11 +599,14 @@ footer {
     box-shadow: 5px 5px 10px grey;
   }
 
+  .search-form button {
+    padding: 10px 15px;
+  }
+
   .profile-card {
     display: flex;
     flex-direction: column;
     background-color: white;
-    border: 1px solid black;
     border-radius: 10px;
     flex-basis: 0;
     margin: 0 2.5em;
@@ -597,7 +625,6 @@ footer {
 
   .card img {
     width: 15em;
-    border: 1px solid black;
     margin: 20px 10px;
   }
 
@@ -660,6 +687,19 @@ footer {
     text-align: center;
   }
 
+  .book-card {
+    flex-direction: column;
+    align-items: baseline;
+  }
+
+  .book-action {
+    margin-top: 30px;
+  }
+
+  .book-action button {
+    padding: 0;
+  }
+
   footer {
     position: relative;
     bottom: 0;
@@ -685,7 +725,6 @@ footer {
     flex-direction: column;
     align-items: center;
     background-color: white;
-    border: 1px solid black;
     border-radius: 10px;
     flex-basis: 33.3%;
     margin: 0 0 2em;
@@ -698,7 +737,6 @@ footer {
     display: flex;
     flex-direction: column;
     background-color: white;
-    border: 1px solid black;
     border-radius: 10px;
     flex-basis: 33.3%;
     margin: 0 2.5em;
