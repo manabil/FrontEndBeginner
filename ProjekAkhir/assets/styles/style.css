@@ -203,16 +203,18 @@ h3 {
   background-color: #4154f1;
 }
 
-.form-card {
+.card-second {
   display: flex;
-  flex-direction: column;
+  border-radius: 10px;
+  max-width: 90vw;
+}
+
+.form-card {
   background-color: white;
   border: 1px solid #979797;
-  border-radius: 10px;
   margin: 1em 0;
   padding: 1.5em;
   width: 640px;
-  max-width: 90vw;
 }
 
 .form-card p {
@@ -256,11 +258,8 @@ h3 {
 }
 
 .katalog-card {
-  display: flex;
-  border-radius: 10px;
   padding: 2em;
   width: 1156px;
-  max-width: 90vw;
 }
 
 .katalog-card > a {
@@ -279,9 +278,8 @@ h3 {
   background-color: #136633;
 }
 
-.profile-card {
+.card {
   display: flex;
-  flex-direction: row;
   background-color: white;
   border-radius: 10px;
   flex-basis: 33.3%;
@@ -289,9 +287,12 @@ h3 {
   height: 65vh;
   transition: 0.25s;
   box-shadow: 5px 5px 10px grey;
+  transition: 0.25s;
+}
+
+.profile-card {
   padding: 2em;
   width: 40vw;
-  transition: 0.25s;
 }
 
 .profile-card:hover {
@@ -299,16 +300,7 @@ h3 {
 }
 
 .features-card {
-  display: flex;
-  flex-direction: column;
   align-items: center;
-  background-color: white;
-  border-radius: 10px;
-  flex-basis: 33.3%;
-  margin: 0 2.5em;
-  height: 65vh;
-  transition: 0.25s;
-  box-shadow: 5px 5px 10px grey;
 }
 
 .features-card:hover {
