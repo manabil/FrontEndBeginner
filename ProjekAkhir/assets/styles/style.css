@@ -482,11 +482,6 @@ footer {
     z-index: 2;
   }
 
-  .flex-row#feature {
-    max-height: 300vh;
-    background-image: linear-gradient(#f2f5fc, white);
-  }
-
   .flex-content {
     display: flex;
     flex-direction: column;
@@ -506,85 +501,33 @@ footer {
 
   .flex-content#content-katalog,
   .flex-content#content-tambah {
-    margin: 50px 7%;
+    margin: 60px 7%;
   }
 
   article img#image-main {
     display: none;
   }
 
-  .pad0 {
-    padding: 0;
-  }
-
-  .flex-header {
-    margin-bottom: 2em;
-  }
-
   h1 {
     font-size: 2em;
-    font-weight: bold;
-    color: #263179;
     text-align: center;
-    margin-bottom: 0.5em;
     padding: 0 0 0 0;
   }
 
   h3 {
     font-size: 1.25em;
-    font-weight: 100;
-    color: #444444;
     margin: 0.5em 0 1.5em 0em;
-    padding: 0 20px 0 0;
-  }
-
-  .flex-header h2 {
-    font-size: 1.25em;
-    padding: 0.25em 0;
-    text-align: center;
-    color: #4154f1;
-  }
-
-  .flex-header h3 {
-    text-align: center;
-    font-weight: 700;
-    padding: 0 25px;
-    color: #263179;
-    margin: 0;
-  }
-
-  .btn {
-    text-decoration: none;
-    background: #4154f1;
-    padding: 0.6em 1.9em;
-    font-weight: normal;
-    border-radius: 6px;
-    color: white;
-    font-size: 1.3em;
-    transition: 0.5s;
-  }
-
-  .btn:hover {
-    background: #212b81;
   }
 
   .flex-card {
-    display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
   }
 
   .features-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: white;
-    border-radius: 10px;
     flex-basis: 0;
-    margin: 0 0 2em;
-    height: 65vh;
-    transition: 0.25s;
-    box-shadow: 5px 5px 10px grey;
+    margin: 0 10px 2em;
+    height: fit-content;
   }
 
   .search-form button {
@@ -592,40 +535,11 @@ footer {
   }
 
   .profile-card {
-    display: flex;
-    flex-direction: column;
-    background-color: white;
-    border-radius: 10px;
     flex-basis: 0;
-    margin: 0 2.5em;
-    height: 65vh;
-    transition: 0.25s;
-    box-shadow: 5px 5px 10px grey;
     padding: 2em;
     align-items: center;
-    width: 50%;
-  }
-
-  .features-card:hover {
-    transform: scale(1.075);
-    box-shadow: 1px 1px 100px grey;
-  }
-
-  .features-card img {
-    width: 15em;
-    margin: 20px 10px;
-  }
-
-  .features-card h3 {
-    font-weight: 700;
-    padding: 0 25px;
-    color: #263179;
-    margin: 0.5em 0 0;
-  }
-
-  .features-card p {
-    padding: 2em 2em;
-    text-align: center;
+    width: fit-content;
+    height: fit-content;
   }
 
   .profile-card img {
@@ -633,18 +547,10 @@ footer {
     height: 12em;
     border-radius: 6em;
     object-fit: cover;
-    margin: 0;
-    transition: 0.25s;
-  }
-
-  .profile-card img:hover {
-    transform: scale(1.25);
-    border-radius: 15px;
-    box-shadow: 1px 1px 100px grey;
+    margin: 0 15px 0;
   }
 
   .profile-contact {
-    margin: 20px 0 0 0;
     display: flex;
     justify-content: space-evenly;
   }
@@ -652,23 +558,8 @@ footer {
   .profile-contact img {
     width: 30px;
     height: 30px;
-    margin: 0 20px 0 0;
     margin: 0;
     border-radius: 0.1px;
-  }
-
-  .profile-contact img:hover {
-    transform: scale(1.5);
-    box-shadow: 1px 1px 100px grey;
-    border-radius: 0;
-  }
-
-  .profile-header h3 {
-    margin: 1.5em 0;
-    padding: 0;
-    text-align: center;
-    font-weight: 700;
-    color: #263179;
   }
 
   .profile-header p {
@@ -702,36 +593,17 @@ footer {
 
 @media screen and (max-width: 650px) {
   .flex-card {
-    display: flex;
-    flex-wrap: wrap;
     justify-content: center;
   }
 
   .features-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: white;
-    border-radius: 10px;
     flex-basis: 33.3%;
     margin: 0 0 2em;
-    height: 65vh;
-    transition: 0.25s;
-    box-shadow: 5px 5px 10px grey;
   }
 
   .profile-card {
-    display: flex;
     flex-direction: column;
-    background-color: white;
-    border-radius: 10px;
     flex-basis: 33.3%;
-    margin: 0 2.5em;
-    height: 65vh;
-    transition: 0.25s;
-    box-shadow: 5px 5px 10px grey;
-    padding: 2em;
-    align-items: center;
     width: 100%;
   }
 
@@ -741,24 +613,11 @@ footer {
     border-radius: 10em;
     object-fit: cover;
     margin: 0;
-    transition: 0.25s;
-  }
-
-  .profile-contact {
-    margin: 20px 0 0 0;
-    display: flex;
-    justify-content: space-evenly;
   }
 
   .profile-contact img {
     width: 30px;
     height: 30px;
-    margin: 0 20px 0 0;
-    margin: 0;
     border-radius: 0.1px;
-  }
-
-  footer {
-    margin: 3em 0 0 0;
   }
 }
