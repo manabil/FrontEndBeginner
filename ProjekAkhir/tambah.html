@@ -47,6 +47,15 @@
                 <p>Tahun</p>
                 <input id="inputTahun" type="number" placeholder="Masukkan Tahun Buku Terbit" required />
               </div>
+              <div class="card-second form-card col-dir">
+                <p>Status Buku</p>
+                <div class="form-radio">
+                  <input id="inputComplete" type="radio" name="statusBuku" value="complete" />
+                    <label for="inputComplete">Sudah selesai dibaca</label><br /><br />
+                  <input id="inputUncomplete" type="radio" name="statusBuku" value="uncomplete" />
+                    <label for="inputUncomplete">Belum selesai dibaca</label><br />
+                </div>
+              </div>
               <input type="submit" name="saveButton" value="Simpan Buku" />
             </form>
           </article>
