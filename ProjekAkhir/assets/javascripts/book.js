@@ -107,6 +107,7 @@ function manipulateBook(bookObject) {
     const bookTarget = findBook(bookId);
     if (bookTarget == null) return;
     bookTarget.isCompleted = true;
+    document.dispatchEvent(new Event(RENDER_EVENT));
     saveData();
   }
 
@@ -204,11 +205,9 @@ function manipulateBook(bookObject) {
     const buttonUncompleted = document.createElement('button');
     buttonUncompleted.title = 'Uncomplete Read';
     buttonUncompleted.append(iconReaded);
-    console.log(buttonUncompleted);
 
     buttonUncompleted.addEventListener('click', () => {
       undoBook(bookObject.id);
-      console.log('event trigerred');
     });
 
     bookAction.append(buttonUncompleted, buttonEdit, buttonDelete);
@@ -307,7 +306,6 @@ document.addEventListener(RENDER_EVENT, () => {
     const bookElement = manipulateBook(bookItem);
     bookList.append(bookElement);
   }
-  console.log('book rendered');
 });
 
 document.addEventListener(SAVED_EVENT, () => {
