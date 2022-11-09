@@ -432,14 +432,6 @@ h3 {
   cursor: pointer;
 }
 
-footer {
-  background: #263179;
-  padding: 10px 0em;
-  color: #fff;
-  text-align: center;
-  font-size: 0.8em;
-}
-
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -448,6 +440,14 @@ input::-webkit-inner-spin-button {
 
 input[type='number'] {
   -moz-appearance: textfield;
+}
+
+footer {
+  background: #263179;
+  padding: 10px 0em;
+  color: #fff;
+  text-align: center;
+  font-size: 0.8em;
 }
 
 @media screen and (max-width: 1280px) {

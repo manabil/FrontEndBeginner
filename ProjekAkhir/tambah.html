@@ -41,11 +41,11 @@
               </div>
               <div class="card-second form-card col-dir">
                 <p>Penulis</p>
-                <input id="inputPenulis" type="text" placeholder="Masukkan Penulis Buku" required />
+                <input id="inputPenulis" type="text" placeholder="Masukkan Penulis Buku" onkeydown="return /[a-z' ]/i.test(event.key)" required />
               </div>
               <div class="card-second form-card col-dir">
                 <p>Tahun</p>
-                <input id="inputTahun" type="number" placeholder="Masukkan Tahun Buku Terbit" required />
+                <input id="inputTahun" type="number" min="1900" max="2099" step="1" placeholder="Masukkan Tahun Buku Terbit" required />
               </div>
               <div class="card-second form-card col-dir">
                 <p>Status Buku</p>
