@@ -440,6 +440,16 @@ footer {
   font-size: 0.8em;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
 @media screen and (max-width: 1280px) {
   nav ul {
     position: absolute;
