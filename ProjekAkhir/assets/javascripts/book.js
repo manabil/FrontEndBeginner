@@ -1,5 +1,4 @@
 const books = [];
-const SAVED_EVENT = 'saved-book';
 const RENDER_EVENT = 'render-book';
 const STORAGE_KEY = 'CATALOG_APPS';
 
@@ -277,7 +276,6 @@ function saveData() {
   if (isStorageExist()) {
     const parsed = JSON.stringify(books);
     localStorage.setItem(STORAGE_KEY, parsed);
-    document.dispatchEvent(new Event(SAVED_EVENT));
   }
 }
 
@@ -490,8 +488,4 @@ document.addEventListener(RENDER_EVENT, () => {
     const bookElement = manipulateBook(bookItem);
     bookList.append(bookElement);
   }
-});
-
-document.addEventListener(SAVED_EVENT, () => {
-  // pass
 });
