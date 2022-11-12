@@ -243,7 +243,7 @@ function manipulateBook(bookObject) {
 
     readedCheck.append(iconCheck);
     bookTitle.append(readedCheck);
-    buttonUncompleted.append(iconReaded);
+    buttonUncompleted.append(iconUnreaded);
 
     buttonUncompleted.addEventListener('click', () => {
       undoBook(bookObject.id);
@@ -255,7 +255,7 @@ function manipulateBook(bookObject) {
   } else {
     const buttonCompleted = document.createElement('button');
     buttonCompleted.title = 'Complete Read';
-    buttonCompleted.append(iconUnreaded);
+    buttonCompleted.append(iconReaded);
 
     buttonCompleted.addEventListener('click', () => {
       readedBook(bookObject.id);
@@ -369,53 +369,13 @@ function searchBook() {
     // eslint-disable-next-line max-len
     if (book.title.toLowerCase().includes(searchInput) || book.year.toLowerCase().includes(searchInput) || book.author.toLowerCase().includes(searchInput)) {
       if (book.isCompleted) {
-        const item = `
-          <div class="book-card">
-            <div class="book-info">
-              <h2>${book.title} 
-                <span style="color: green">
-                  <i class="fa fa-light fa-circle-check"></i>
-                </span>
-              </h2>
-              <p style="font-size: 17px"><b>${book.year}</b></p>
-              <p style="margin-top: 15px;">${book.author}</p>
-            </div>
-            <div class="book-action">
-              <button title="Uncomplete Read">
-                <i class="fa fa-light fa-book-open fa-2xl"></i>
-              </button>
-              <button title="Edit Book">
-                <i class="fa fa-regular fa-pen-to-square fa-2xl"></i>
-              </button>
-              <button title="Delete Book">
-                <i class="fa fa-regular fa-trash fa-2xl"></i>
-              </button>
-            </div>
-          </div>`;
-        container.innerHTML += item;
         isAny += 1;
+        const bookItem = manipulateBook(book);
+        container.append(bookItem);
       } else {
-        const item = `
-          <div class="book-card">
-            <div class="book-info">
-              <h2>${book.title}</h2>
-              <p style="font-size: 17px"><b>${book.year}</b></p>
-              <p style="margin-top: 15px;">${book.author}</p>
-            </div>
-            <div class="book-action">
-              <button title="Completed Read">
-                <i class="fa fa-thin fa-book fa-2xl"></i>
-              </button>
-              <button title="Edit Book">
-                <i class="fa fa-regular fa-pen-to-square fa-2xl"></i>
-              </button>
-              <button title="Delete Book">
-                <i class="fa fa-regular fa-trash fa-2xl"></i>
-              </button>
-            </div>
-          </div>`;
-        container.innerHTML += item;
         isAny += 1;
+        const bookItem = manipulateBook(book);
+        container.append(bookItem);
       }
     }
   }
