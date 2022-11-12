@@ -1,22 +1,22 @@
 const books = [];
-const RENDER_EVENT = 'render-book';
-const STORAGE_KEY = 'CATALOG_APPS';
+const RENDER_EVENT = "render-book";
+const STORAGE_KEY = "CATALOG_APPS";
 
-document.addEventListener('DOMContentLoaded', () => {
-  const submitForm = document.getElementById('form');
+document.addEventListener("DOMContentLoaded", () => {
+  const submitForm = document.getElementById("form");
   if (isStorageExist()) {
     loadDataFromStorage();
   }
   if (submitForm != null) {
     const params = new URLSearchParams(document.location.search);
-    if (params.has('book')) {
-      getBook(parseInt(params.get('book')));
-      submitForm.addEventListener('submit', (event) => {
+    if (params.has("book")) {
+      getBook(parseInt(params.get("book")));
+      submitForm.addEventListener("submit", (event) => {
         event.preventDefault();
-        editBook(parseInt(params.get('book')));
+        editBook(parseInt(params.get("book")));
       });
     } else {
-      submitForm.addEventListener('submit', (event) => {
+      submitForm.addEventListener("submit", (event) => {
         event.preventDefault();
         addBook();
       });
@@ -71,14 +71,24 @@ function addBook() {
   }
 
   const generatedID = generateId();
-  const inputTitle = document.getElementById('inputJudul').value + '  ';
-  const inputAuthor = document.getElementById('inputPenulis').value;
-  const inputYear = document.getElementById('inputTahun').value;
+  const inputTitle = document.getElementById("inputJudul").value + "  ";
+  const inputAuthor = document.getElementById("inputPenulis").value;
+  const inputYear = document.getElementById("inputTahun").value;
   // eslint-disable-next-line max-len
-  const inputIsComplete = document.querySelector('input[name="inputStatusBuku"]:checked').value === 'true' ? true : false;
+  const inputIsComplete =
+    document.querySelector('input[name="inputStatusBuku"]:checked').value ===
+    "true"
+      ? true
+      : false;
 
   // eslint-disable-next-line max-len
-  const bookObject = generateBookObject(generatedID, inputTitle, inputAuthor, inputYear, inputIsComplete);
+  const bookObject = generateBookObject(
+    generatedID,
+    inputTitle,
+    inputAuthor,
+    inputYear,
+    inputIsComplete
+  );
   books.push(bookObject);
 
   toastNotification();
@@ -91,27 +101,31 @@ function addBook() {
  * @param {number} bookId Id of book
  */
 function editBook(bookId) {
-  const inputTitle = document.getElementById('inputJudul').value;
-  const inputAuthor = document.getElementById('inputPenulis').value;
-  const inputYear = document.getElementById('inputTahun').value;
+  const inputTitle = document.getElementById("inputJudul").value;
+  const inputAuthor = document.getElementById("inputPenulis").value;
+  const inputYear = document.getElementById("inputTahun").value;
   // eslint-disable-next-line max-len
-  const inputIsComplete = document.querySelector('input[name="inputStatusBuku"]:checked').value === 'true' ? true : false;
+  const inputIsComplete =
+    document.querySelector('input[name="inputStatusBuku"]:checked').value ===
+    "true"
+      ? true
+      : false;
 
   const bookIdx = findBookIndex(bookId);
-  books[bookIdx].title = inputTitle + ' ';
+  books[bookIdx].title = inputTitle + " ";
   books[bookIdx].author = inputAuthor;
   books[bookIdx].year = inputYear;
   books[bookIdx].isCompleted = inputIsComplete;
 
   Swal.fire({
-    title: 'Apakah anda yakin mengubah buku ini ?',
+    title: "Apakah anda yakin mengubah buku ini ?",
     showCancelButton: true,
-    confirmButtonText: 'Ya',
-    cancelButtonText: 'Batal',
-    icon: 'warning',
+    confirmButtonText: "Ya",
+    cancelButtonText: "Batal",
+    icon: "warning",
   }).then((result) => {
     if (result.isConfirmed) {
-      toastNotification('edit');
+      toastNotification("edit");
       saveData();
     }
   });
@@ -174,92 +188,92 @@ function manipulateBook(bookObject) {
     saveData();
   }
 
-  const bookTitle = document.createElement('h2');
-  const bookYear = document.createElement('p');
-  const bookAuthor = document.createElement('p');
+  const bookTitle = document.createElement("h2");
+  const bookYear = document.createElement("p");
+  const bookAuthor = document.createElement("p");
 
   bookTitle.innerText = bookObject.title;
   bookAuthor.innerText = bookObject.author;
   bookYear.innerText = bookObject.year;
   bookYear.style.fontWeight = 900;
-  bookYear.style.fontSize = '17px';
-  bookYear.style.marginBottom = '15px';
+  bookYear.style.fontSize = "17px";
+  bookYear.style.marginBottom = "15px";
 
-  const bookInfo = document.createElement('div');
-  const bookAction = document.createElement('div');
-  bookInfo.classList.add('book-info');
-  bookAction.classList.add('book-action');
+  const bookInfo = document.createElement("div");
+  const bookAction = document.createElement("div");
+  bookInfo.classList.add("book-info");
+  bookAction.classList.add("book-action");
   bookInfo.append(bookTitle, bookYear, bookAuthor);
 
-  const container = document.createElement('div');
-  container.classList.add('book-card');
+  const container = document.createElement("div");
+  container.classList.add("book-card");
   container.append(bookInfo);
 
-  const iconReaded = document.createElement('i');
-  const iconUnreaded = document.createElement('i');
-  const iconEdit = document.createElement('i');
-  const iconDelete = document.createElement('i');
-  const iconCheck = document.createElement('i');
+  const iconReaded = document.createElement("i");
+  const iconUnreaded = document.createElement("i");
+  const iconEdit = document.createElement("i");
+  const iconDelete = document.createElement("i");
+  const iconCheck = document.createElement("i");
 
-  iconReaded.classList.add('fa', 'fa-light', 'fa-book-open', 'fa-2xl');
-  iconUnreaded.classList.add('fa', 'fa-thin', 'fa-book', 'fa-2xl');
-  iconEdit.classList.add('fa', 'fa-regular', 'fa-pen-to-square', 'fa-2xl');
-  iconDelete.classList.add('fa', 'fa-regular', 'fa-trash', 'fa-2xl');
-  iconCheck.classList.add('fa', 'fa-light', 'fa-circle-check');
+  iconReaded.classList.add("fa", "fa-light", "fa-book-open", "fa-2xl");
+  iconUnreaded.classList.add("fa", "fa-thin", "fa-book", "fa-2xl");
+  iconEdit.classList.add("fa", "fa-regular", "fa-pen-to-square", "fa-2xl");
+  iconDelete.classList.add("fa", "fa-regular", "fa-trash", "fa-2xl");
+  iconCheck.classList.add("fa", "fa-light", "fa-circle-check");
 
-  const buttonEdit = document.createElement('button');
-  const buttonDelete = document.createElement('button');
+  const buttonEdit = document.createElement("button");
+  const buttonDelete = document.createElement("button");
 
-  buttonEdit.title = 'Edit Book';
-  buttonDelete.title = 'Delete Book';
+  buttonEdit.title = "Edit Book";
+  buttonDelete.title = "Delete Book";
 
   buttonEdit.append(iconEdit);
   buttonDelete.append(iconDelete);
 
-  buttonEdit.addEventListener('click', () => {
-    window.open(`tambah.html?book=${bookObject.id}`, '_parent');
+  buttonEdit.addEventListener("click", () => {
+    window.open(`tambah.html?book=${bookObject.id}`, "_parent");
   });
 
-  buttonDelete.addEventListener('click', () => {
+  buttonDelete.addEventListener("click", () => {
     Swal.fire({
-      title: 'Apakah anda ingin menghapus buku ini ?',
+      title: "Apakah anda ingin menghapus buku ini ?",
       showCancelButton: true,
-      confirmButtonText: 'Ya',
-      cancelButtonText: 'Batal',
-      icon: 'warning',
+      confirmButtonText: "Ya",
+      cancelButtonText: "Batal",
+      icon: "warning",
     }).then((result) => {
       if (result.isConfirmed) {
-        toastNotification('hapus', bookObject);
+        toastNotification("hapus", bookObject);
         removeBook(bookObject.id);
       }
     });
   });
 
   if (bookObject.isCompleted) {
-    const readedCheck = document.createElement('span');
-    const buttonUncompleted = document.createElement('button');
-    readedCheck.style.color = 'green';
-    buttonUncompleted.title = 'Uncomplete Read';
+    const readedCheck = document.createElement("span");
+    const buttonUncompleted = document.createElement("button");
+    readedCheck.style.color = "green";
+    buttonUncompleted.title = "Uncomplete Read";
 
     readedCheck.append(iconCheck);
     bookTitle.append(readedCheck);
     buttonUncompleted.append(iconReaded);
 
-    buttonUncompleted.addEventListener('click', () => {
+    buttonUncompleted.addEventListener("click", () => {
       undoBook(bookObject.id);
-      toastNotification('ubah', bookObject);
+      toastNotification("ubah", bookObject);
     });
 
     bookAction.append(buttonUncompleted, buttonEdit, buttonDelete);
     container.append(bookAction);
   } else {
-    const buttonCompleted = document.createElement('button');
-    buttonCompleted.title = 'Complete Read';
+    const buttonCompleted = document.createElement("button");
+    buttonCompleted.title = "Complete Read";
     buttonCompleted.append(iconUnreaded);
 
-    buttonCompleted.addEventListener('click', () => {
+    buttonCompleted.addEventListener("click", () => {
       readedBook(bookObject.id);
-      toastNotification('ubah', bookObject);
+      toastNotification("ubah", bookObject);
     });
 
     bookAction.append(buttonCompleted, buttonEdit, buttonDelete);
@@ -285,7 +299,7 @@ function saveData() {
  */
 function isStorageExist() {
   if (typeof Storage === undefined) {
-    alert('Browser kamu tidak mendukung local storage');
+    alert("Browser kamu tidak mendukung local storage");
     return false;
   }
   return true;
@@ -311,43 +325,51 @@ function loadDataFromStorage() {
  * @param {string} buku Object of book
  */
 function toastNotification(text, buku) {
-  if (text == 'hapus') {
+  if (text == "hapus") {
     // eslint-disable-next-line max-len
-    tata.success(`Buku telah berhasil dihapus`, `Buku "${buku.title}" telah dihapus`, {
-      duration: 5000,
-      animate: 'slide',
-    });
-  } else if (text == 'ubah') {
+    tata.success(
+      `Buku telah berhasil dihapus`,
+      `Buku "${buku.title}" telah dihapus`,
+      {
+        duration: 5000,
+        animate: "slide",
+      }
+    );
+  } else if (text == "ubah") {
     // eslint-disable-next-line max-len
     if (buku.isCompleted) {
       tata.success(`Buku sudah dibaca`, `Buku "${buku.title}" telah dibaca`, {
         duration: 5000,
-        animate: 'slide',
+        animate: "slide",
       });
     } else {
       tata.warn(`Buku belum dibaca`, `Buku "${buku.title}" belum dibaca`, {
         duration: 5000,
-        animate: 'slide',
+        animate: "slide",
       });
     }
-  } else if (text == 'edit') {
+  } else if (text == "edit") {
     // eslint-disable-next-line max-len
-    tata.success(`Buku berhasil diubah`, 'Klik disini untuk melihat katalog', {
+    tata.success(`Buku berhasil diubah`, "Klik disini untuk melihat katalog", {
       duration: 5000,
-      animate: 'slide',
+      animate: "slide",
       onClick: () => {
-        window.open('katalog.html');
+        window.open("katalog.html");
       },
     });
   } else {
     // eslint-disable-next-line max-len
-    tata.success(`Buku berhasil ditambah`, 'Klik disini untuk melihat katalog', {
-      duration: 5000,
-      animate: 'slide',
-      onClick: () => {
-        window.open('katalog.html');
-      },
-    });
+    tata.success(
+      `Buku berhasil ditambah`,
+      "Klik disini untuk melihat katalog",
+      {
+        duration: 5000,
+        animate: "slide",
+        onClick: () => {
+          window.open("katalog.html");
+        },
+      }
+    );
   }
 }
 
@@ -356,76 +378,40 @@ function toastNotification(text, buku) {
  */
 function searchBook() {
   // eslint-disable-next-line max-len
-  const searchInput = document.getElementById('searchInput').value.toLowerCase();
-  const container = document.getElementsByClassName('book-item')[0];
-  container.innerHTML = '';
+  const searchInput = document
+    .getElementById("searchInput")
+    .value.toLowerCase();
+  const container = document.getElementsByClassName("book-item")[0];
+  container.innerHTML = "";
 
-  if (searchInput == '') {
+  if (searchInput == "") {
     document.dispatchEvent(new Event(RENDER_EVENT));
     return;
   }
   let isAny = 0;
   for (const book of books) {
     // eslint-disable-next-line max-len
-    if (book.title.toLowerCase().includes(searchInput) || book.year.toLowerCase().includes(searchInput) || book.author.toLowerCase().includes(searchInput)) {
+    if (
+      book.title.toLowerCase().includes(searchInput) ||
+      book.year.toLowerCase().includes(searchInput) ||
+      book.author.toLowerCase().includes(searchInput)
+    ) {
       if (book.isCompleted) {
-        const item = `
-          <div class="book-card">
-            <div class="book-info">
-              <h2>${book.title} 
-                <span style="color: green">
-                  <i class="fa fa-light fa-circle-check"></i>
-                </span>
-              </h2>
-              <p style="font-size: 17px"><b>${book.year}</b></p>
-              <p style="margin-top: 15px;">${book.author}</p>
-            </div>
-            <div class="book-action">
-              <button title="Uncomplete Read">
-                <i class="fa fa-light fa-book-open fa-2xl"></i>
-              </button>
-              <button title="Edit Book">
-                <i class="fa fa-regular fa-pen-to-square fa-2xl"></i>
-              </button>
-              <button title="Delete Book">
-                <i class="fa fa-regular fa-trash fa-2xl"></i>
-              </button>
-            </div>
-          </div>`;
-        container.innerHTML += item;
+        manipulateBook(book.id);
         isAny += 1;
       } else {
-        const item = `
-          <div class="book-card">
-            <div class="book-info">
-              <h2>${book.title}</h2>
-              <p style="font-size: 17px"><b>${book.year}</b></p>
-              <p style="margin-top: 15px;">${book.author}</p>
-            </div>
-            <div class="book-action">
-              <button title="Completed Read">
-                <i class="fa fa-thin fa-book fa-2xl"></i>
-              </button>
-              <button title="Edit Book">
-                <i class="fa fa-regular fa-pen-to-square fa-2xl"></i>
-              </button>
-              <button title="Delete Book">
-                <i class="fa fa-regular fa-trash fa-2xl"></i>
-              </button>
-            </div>
-          </div>`;
-        container.innerHTML += item;
+        manipulateBook(book.id);
         isAny += 1;
       }
     }
   }
   if (!isAny) {
-    const text = document.createElement('h3');
-    text.innerHTML = 'Tidak ditemukan buku ! </br> ❌';
-    text.style.marginTop = '50px';
-    text.style.textAlign = 'center';
-    text.style.fontWeight = 'bold';
-    text.style.color = 'red';
+    const text = document.createElement("h3");
+    text.innerHTML = "Tidak ditemukan buku ! </br> ❌";
+    text.style.marginTop = "50px";
+    text.style.textAlign = "center";
+    text.style.fontWeight = "bold";
+    text.style.color = "red";
     container.append(text);
     isAny = false;
   }
@@ -436,10 +422,10 @@ function searchBook() {
  * @param {number} bookId Id of book
  */
 function getBook(bookId) {
-  const submitButton = document.getElementsByName('saveButton')[0];
-  const inputJudul = document.getElementById('inputJudul');
-  const inputPenulis = document.getElementById('inputPenulis');
-  const inputTahun = document.getElementById('inputTahun');
+  const submitButton = document.getElementsByName("saveButton")[0];
+  const inputJudul = document.getElementById("inputJudul");
+  const inputPenulis = document.getElementById("inputPenulis");
+  const inputTahun = document.getElementById("inputTahun");
 
   const bookIdx = findBookIndex(bookId);
   const judul = books[bookIdx].title;
@@ -451,36 +437,36 @@ function getBook(bookId) {
   inputPenulis.value = penulis;
   inputTahun.value = tahun;
   if (isCompleted) {
-    document.getElementById('inputComplete').checked = true;
+    document.getElementById("inputComplete").checked = true;
   } else {
-    document.getElementById('inputUncomplete').checked = true;
+    document.getElementById("inputUncomplete").checked = true;
   }
 
-  submitButton.value = 'Edit Buku';
+  submitButton.value = "Edit Buku";
 }
 
-document.getElementById('searchInput').addEventListener('keyup', (event) => {
+document.getElementById("searchInput").addEventListener("keyup", (event) => {
   event.preventDefault();
   searchBook();
 });
 
-document.getElementById('searchSubmit').addEventListener('submit', (event) => {
+document.getElementById("searchSubmit").addEventListener("submit", (event) => {
   event.preventDefault();
   searchBook();
 });
 
 document.addEventListener(RENDER_EVENT, () => {
-  const bookList = document.getElementsByClassName('book-item')[0];
-  bookList.innerHTML = '';
+  const bookList = document.getElementsByClassName("book-item")[0];
+  bookList.innerHTML = "";
 
   if (books.length == 0) {
-    const container = document.getElementsByClassName('book-item')[0];
-    const text = document.createElement('h3');
-    text.innerHTML = 'Isi buku terlebih dahulu ! </br> 📚📚📚';
-    text.style.marginTop = '50px';
-    text.style.textAlign = 'center';
-    text.style.fontWeight = 'bold';
-    text.style.color = '#263179';
+    const container = document.getElementsByClassName("book-item")[0];
+    const text = document.createElement("h3");
+    text.innerHTML = "Isi buku terlebih dahulu ! </br> 📚📚📚";
+    text.style.marginTop = "50px";
+    text.style.textAlign = "center";
+    text.style.fontWeight = "bold";
+    text.style.color = "#263179";
     container.append(text);
   }
 
