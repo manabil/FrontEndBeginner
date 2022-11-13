@@ -3,7 +3,7 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Katalog Buku | Katalog Buku Anda</title>
-    <link rel="stylesheet" href="assets/styles/min_style.css" />
+    <link rel="stylesheet" href="assets/styles/style.css" />
     <link rel="icon" href="assets/images/icon.webp" />
 
     <script src="https://kit.fontawesome.com/9bf0f05b94.js" crossorigin="anonymous"></script>
@@ -43,7 +43,27 @@
                   <button id="searchSubmit" type="submit" disabled><i class="fa fa-light fa-magnifying-glass"></i></button>
                 </form>
               </div>
-              <div class="book-item"></div>
+              <div class="group">
+                <button id="group-button">Group Books By Read</button>
+              </div>
+              <div class="book-complete">
+                <h2 class="book-header">Selesai dibaca 📖</h2>
+                <br />
+                <hr />
+                <div class="book-complete-item"></div>
+              </div>
+              <div class="book-uncomplete">
+                <h2 class="book-header">Belum selesai dibaca 📘</h2>
+                <br />
+                <hr />
+                <div class="book-uncomplete-item"></div>
+              </div>
+              <div class="book-all">
+                <h2 class="book-header">List Buku 📚</h2>
+                <br />
+                <hr />
+                <div class="book-item"></div>
+              </div>
             </div>
           </article>
         </div>
@@ -53,7 +73,7 @@
       <p>Belajar Dasar Pemrograman Web &#169; 2019, Dicoding Academy</p>
     </footer>
     <script src="assets/javascripts/min_interact.js"></script>
-    <script src="assets/javascripts/min_book.js"></script>
+    <script src="assets/javascripts/book.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/tata-js@0.1.5/dist/tata.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   </body>

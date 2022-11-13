@@ -1,6 +1,7 @@
 const books = [];
 const RENDER_EVENT = 'render-book';
 const STORAGE_KEY = 'CATALOG_APPS';
+let isSorted = false;
 
 document.addEventListener('DOMContentLoaded', () => {
   const submitForm = document.getElementById('form');
@@ -419,6 +420,28 @@ function getBook(bookId) {
   submitButton.value = 'Edit Buku';
 }
 
+/**
+ * pass
+ */
+function groupBook() {
+  const groupButton = document.getElementById('group-button');
+  if (isSorted) {
+    groupButton.style.backgroundColor = 'white';
+    groupButton.style.color = 'black';
+    isSorted = false;
+  } else {
+    groupButton.style.backgroundColor = '#4154f1';
+    groupButton.style.color = 'white';
+    isSorted = true;
+  }
+}
+
+document.getElementById('group-button').addEventListener('click', (event) => {
+  event.preventDefault();
+  groupBook();
+  document.dispatchEvent(new Event(RENDER_EVENT));
+});
+
 document.getElementById('searchInput').addEventListener('keyup', (event) => {
   event.preventDefault();
   searchBook();
@@ -431,7 +454,17 @@ document.getElementById('searchSubmit').addEventListener('submit', (event) => {
 
 document.addEventListener(RENDER_EVENT, () => {
   const bookList = document.getElementsByClassName('book-item')[0];
+  const bookAll = document.getElementsByClassName('book-all')[0];
+  const bookComplete = document.getElementsByClassName('book-complete')[0];
+  const bookUncomplete = document.getElementsByClassName('book-uncomplete')[0];
+  // eslint-disable-next-line max-len
+  const bookCompleteList = document.getElementsByClassName('book-complete-item')[0];
+  // eslint-disable-next-line max-len
+  const bookUncompleteList = document.getElementsByClassName('book-uncomplete-item')[0];
+
   bookList.innerHTML = '';
+  bookCompleteList.innerHTML = '';
+  bookUncompleteList.innerHTML = '';
 
   if (books.length == 0) {
     const container = document.getElementsByClassName('book-item')[0];
@@ -444,8 +477,25 @@ document.addEventListener(RENDER_EVENT, () => {
     container.append(text);
   }
 
-  for (const bookItem of books) {
-    const bookElement = manipulateBook(bookItem);
-    bookList.append(bookElement);
+  if (isSorted) {
+    bookComplete.style.display = 'block';
+    bookUncomplete.style.display = 'block';
+    bookAll.style.display = 'none';
+    for (const bookItem of books) {
+      const bookElement = manipulateBook(bookItem);
+      if (bookItem.isCompleted) {
+        bookCompleteList.append(bookElement);
+      } else {
+        bookUncompleteList.append(bookElement);
+      }
+    }
+  } else {
+    bookComplete.style.display = 'none';
+    bookUncomplete.style.display = 'none';
+    bookAll.style.display = 'block';
+    for (const bookItem of books) {
+      const bookElement = manipulateBook(bookItem);
+      bookList.append(bookElement);
+    }
   }
 });
