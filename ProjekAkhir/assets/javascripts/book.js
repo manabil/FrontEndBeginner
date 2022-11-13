@@ -356,30 +356,55 @@ function toastNotification(text, buku) {
  * jos
  */
 function searchBook() {
+  let isAny = 0;
   // eslint-disable-next-line max-len
   const searchInput = document.getElementById('searchInput').value.toLowerCase();
   const container = document.getElementsByClassName('book-item')[0];
+  // eslint-disable-next-line max-len
+  const bookCompleteList = document.getElementsByClassName('book-complete-item')[0];
+  // eslint-disable-next-line max-len
+  const bookUncompleteList = document.getElementsByClassName('book-uncomplete-item')[0];
+
+  bookCompleteList.innerHTML = '';
+  bookUncompleteList.innerHTML = '';
   container.innerHTML = '';
 
   if (searchInput == '') {
     document.dispatchEvent(new Event(RENDER_EVENT));
     return;
   }
-  let isAny = 0;
-  for (const book of books) {
-    // eslint-disable-next-line max-len
-    if (book.title.toLowerCase().includes(searchInput) || book.year.toLowerCase().includes(searchInput) || book.author.toLowerCase().includes(searchInput)) {
-      if (book.isCompleted) {
-        isAny += 1;
-        const bookItem = manipulateBook(book);
-        container.append(bookItem);
-      } else {
-        isAny += 1;
-        const bookItem = manipulateBook(book);
-        container.append(bookItem);
+  if (isSorted) {
+    for (const book of books) {
+      // eslint-disable-next-line max-len
+      if (book.title.toLowerCase().includes(searchInput) || book.year.toLowerCase().includes(searchInput) || book.author.toLowerCase().includes(searchInput)) {
+        if (book.isCompleted) {
+          isAny += 1;
+          const bookItem = manipulateBook(book);
+          bookCompleteList.append(bookItem);
+        } else {
+          isAny += 1;
+          const bookItem = manipulateBook(book);
+          bookUncompleteList.append(bookItem);
+        }
+      }
+    }
+  } else {
+    for (const book of books) {
+      // eslint-disable-next-line max-len
+      if (book.title.toLowerCase().includes(searchInput) || book.year.toLowerCase().includes(searchInput) || book.author.toLowerCase().includes(searchInput)) {
+        if (book.isCompleted) {
+          isAny += 1;
+          const bookItem = manipulateBook(book);
+          container.append(bookItem);
+        } else {
+          isAny += 1;
+          const bookItem = manipulateBook(book);
+          container.append(bookItem);
+        }
       }
     }
   }
+
   if (!isAny) {
     const text = document.createElement('h3');
     text.innerHTML = 'Tidak ditemukan buku ! </br> ❌';
@@ -467,7 +492,8 @@ document.addEventListener(RENDER_EVENT, () => {
   bookUncompleteList.innerHTML = '';
 
   if (books.length == 0) {
-    const container = document.getElementsByClassName('book-item')[0];
+    const container = document.getElementsByClassName('book')[0];
+    container.innerHTML = '';
     const text = document.createElement('h3');
     text.innerHTML = 'Isi buku terlebih dahulu ! </br> 📚📚📚';
     text.style.marginTop = '50px';
