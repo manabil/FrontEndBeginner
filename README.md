@@ -36,6 +36,6 @@ In this repository contains material consisting of:
 
 Thanks to [Dicoding Academy](https://dicoding.com) 🙏
 
-<h3>Next Subject</h3>
+<h3>🏗 Next Subject</h3>
 
-[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=manabil&repo=Applied_Machine_Learning&show_owner=true&theme=tokyonight&bg_color=151515&title_color=fb8c00&text_color=ffffff&icon_color=39d353&border_color=151515)](https://github.com/manabil/Applied_Machine_Learning)
+[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=manabil&repo=FrontEndFundamental&show_owner=true&theme=tokyonight&bg_color=151515&title_color=fb8c00&text_color=ffffff&icon_color=39d353&border_color=151515)](https://github.com/manabil/FrontEndFundamental)
